@@ -1,6 +1,6 @@
-# Create compute instance with metadata and user_data
+# Complete Instance Group
 
-This example demonstrates how to use the instance module to create VM instances with provisioning by metadata and userdata.
+This example demonstrates how to use the instance_group module to create VM instance group.
 
 To provision this example configure provider by the environment variables:
 
