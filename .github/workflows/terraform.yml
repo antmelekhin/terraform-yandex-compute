@@ -22,14 +22,14 @@ jobs:
         with:
           terraform_version: ${{ env.terraform_version }}
 
-      - name: 'Terraform fmt'
+      - name: 'Run terraform fmt'
         continue-on-error: true
         run: terraform fmt -check -recursive -diff
 
-      - name: 'Setup TFLint'
+      - name: 'Setup tflint'
         uses: terraform-linters/setup-tflint@v3
 
-      - name: 'Init TFLint'
+      - name: 'Run tflint'
         continue-on-error: true
         run: |
           tflint --init
