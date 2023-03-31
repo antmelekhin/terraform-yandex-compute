@@ -7,7 +7,7 @@ resource "yandex_compute_instance" "this" {
   platform_id        = var.platform_id
   service_account_id = var.service_account_id
 
-  allow_stopping_for_update = true
+  allow_stopping_for_update = var.allow_stopping_for_update
   network_acceleration_type = var.network_acceleration_type
 
   resources {

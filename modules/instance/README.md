@@ -26,6 +26,7 @@ This module is used to create compute instance(s) using [compute_instance](https
 | hostname                        | Hostname for the instance.                                                                                                   | `string`       | `null`        | no       |
 | platform\_id                    | The type of instance to create. See [official documentation](https://cloud.yandex.com/en/docs/compute/concepts/vm-platforms) | `string`       | `standard-v3` | no       |
 | service\_account\_id            | ID of existing service account authorized for this instance.                                                                 | `string`       | `null`        | no       |
+| allow\_stopping\_for\_update    | If true, allows Terraform to stop the instance in order to update its properties.                                            | `bool`         | `true`        | no       |
 | cores                           | CPU cores for the instance.                                                                                                  | `number`       | `2`           | no       |
 | core\_fraction                  | Specifies baseline performance for a core as a percent.                                                                      | `number`       | `100`         | no       |
 | gpus                            | GPUs for the instance.                                                                                                       | `number`       | `null`        | no       |

@@ -40,6 +40,12 @@ variable "service_account_id" {
   default     = null
 }
 
+variable "allow_stopping_for_update" {
+  description = "If true, allows Terraform to stop the instance in order to update its properties."
+  type        = bool
+  default     = true
+}
+
 variable "cores" {
   description = "CPU cores for the instance."
   type        = number
