@@ -37,6 +37,7 @@ This module is used to create compute instance(s) using [compute_instance](https
 | secondary\_disk\_ids            | IDs of the disk that is attached to the instance.                                                                            | `list(string)` | `null`        | no       |
 | secondary\_disk\_auto\_delete   | Whether the disk is auto-deleted when the instance is deleted.                                                               | `bool`         | `false`       | no       |
 | network\_interfaces             | Networks to attach to the instance.                                                                                          | `list(any)`    | ``            | yes      |
+| network\_acceleration\_type     | Type of network acceleration. The allowed values are `standard`, `software_accelerated`.                                     | `string`       | `standard`    | no       |
 | scheduling\_policy\_preemptible | Specifies if the instance is preemptible.                                                                                    | `bool`         | `false`       | no       |
 | metadata                        | The metadata to provide when launching the instance.                                                                         | `map(string)`  | `{}`          | no       |
 | user\_data                      | The user data to provide when launching the instance.                                                                        | `string`       | `null`        | no       |

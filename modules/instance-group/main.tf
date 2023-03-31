@@ -85,7 +85,7 @@ resource "yandex_compute_instance_group" "this" {
     }
 
     network_settings {
-      type = "STANDARD"
+      type = var.network_acceleration_type
     }
 
     metadata = merge(

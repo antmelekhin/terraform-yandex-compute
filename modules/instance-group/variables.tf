@@ -185,6 +185,12 @@ variable "network_interfaces" {
   type        = list(any)
 }
 
+variable "network_acceleration_type" {
+  description = "Type of network acceleration. The allowed values are `STANDARD`, `SOFTWARE_ACCELERATED`, `HARDWARE_ACCELERATED`."
+  type        = string
+  default     = "STANDARD"
+}
+
 variable "scheduling_policy_preemptible" {
   description = "Specifies if the instance is preemptible."
   type        = bool
