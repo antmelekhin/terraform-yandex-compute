@@ -37,6 +37,36 @@ resource "yandex_compute_instance" "this" {
       nat                = try(network_interface.value.nat, null)
       nat_ip_address     = try(network_interface.value.nat_ip_address, null)
       security_group_ids = try(network_interface.value.security_group_ids, [])
+
+      dynamic "dns_record" {
+        for_each = try([network_interface.value.dns_record], [])
+        content {
+          fqdn        = dns_record.value.fqdn
+          dns_zone_id = try(dns_record.value.dns_zone_id, null)
+          ttl         = try(dns_record.value.ttl, null)
+          ptr         = try(dns_record.value.ptr, null)
+        }
+      }
+
+      dynamic "ipv6_dns_record" {
+        for_each = try([network_interface.value.ipv6_dns_record], [])
+        content {
+          fqdn        = ipv6_dns_record.value.fqdn
+          dns_zone_id = try(ipv6_dns_record.value.dns_zone_id, null)
+          ttl         = try(ipv6_dns_record.value.ttl, null)
+          ptr         = try(ipv6_dns_record.value.ptr, null)
+        }
+      }
+
+      dynamic "nat_dns_record" {
+        for_each = try([network_interface.value.nat_dns_record], [])
+        content {
+          fqdn        = nat_dns_record.value.fqdn
+          dns_zone_id = try(nat_dns_record.value.dns_zone_id, null)
+          ttl         = try(nat_dns_record.value.ttl, null)
+          ptr         = try(nat_dns_record.value.ptr, null)
+        }
+      }
     }
   }
 
