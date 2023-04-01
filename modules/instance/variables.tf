@@ -70,26 +70,55 @@ variable "memory" {
   default     = 2
 }
 
+variable "boot_disk_source_type" {
+  description = "Source type for the boot disk. The allowed values are `disk`, `snapshot`, `image`."
+  type        = string
+  default     = "image"
+}
+
+variable "boot_disk_source_id" {
+  description = "Source id for the boot disk to initialize from."
+  type        = string
+}
+
+variable "boot_disk_auto_delete" {
+  description = "Defines whether the disk will be auto-deleted when the instance is deleted."
+  type        = bool
+  default     = true
+}
+
+variable "boot_disk_device_name" {
+  description = "This value can be used to reference the device under `/dev/disk/by-id/`."
+  type        = string
+  default     = null
+}
+
+variable "boot_disk_mode" {
+  description = "Type of access to the disk resource."
+  type        = string
+  default     = null
+}
+
+variable "boot_disk_name" {
+  description = "The name of the boot disk."
+  type        = string
+  default     = null
+}
+
+variable "boot_disk_description" {
+  description = "A description of the boot disk."
+  type        = string
+  default     = null
+}
+
 variable "boot_disk_size" {
   description = "Size of the boot disk in GB."
   type        = number
-  default     = 10
+  default     = null
 }
 
 variable "boot_disk_type" {
-  description = "Boot disk type. The allowed values are `network-hdd`, `network-ssd`, `network-ssd-nonreplicated`."
-  type        = string
-  default     = null
-}
-
-variable "boot_disk_image_id" {
-  description = "A disk image to initialize this disk from."
-  type        = string
-  default     = null
-}
-
-variable "boot_disk_snapshot_id" {
-  description = "A snapshot to initialize this disk from."
+  description = "The boot disk type. The allowed values are `network-hdd`, `network-ssd`, `network-ssd-nonreplicated`."
   type        = string
   default     = null
 }

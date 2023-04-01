@@ -1,3 +1,9 @@
+locals {
+  disk_id     = var.boot_disk_source_type == "disk" ? var.boot_disk_source_id : null
+  image_id    = var.boot_disk_source_type == "image" ? var.boot_disk_source_id : null
+  snapshot_id = var.boot_disk_source_type == "snapshot" ? var.boot_disk_source_id : null
+}
+
 resource "yandex_compute_instance" "this" {
   name               = var.name
   description        = var.description
@@ -18,11 +24,17 @@ resource "yandex_compute_instance" "this" {
   }
 
   boot_disk {
+    auto_delete = var.boot_disk_auto_delete
+    device_name = var.boot_disk_device_name
+    mode        = var.boot_disk_mode
+    disk_id     = local.disk_id
     initialize_params {
+      name        = var.boot_disk_name
+      description = var.boot_disk_description
       size        = var.boot_disk_size
       type        = var.boot_disk_type
-      image_id    = var.boot_disk_image_id
-      snapshot_id = var.boot_disk_snapshot_id
+      image_id    = local.image_id
+      snapshot_id = local.snapshot_id
     }
   }
 

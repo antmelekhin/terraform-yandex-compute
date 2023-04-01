@@ -56,8 +56,8 @@ module "instances_secondary_disk" {
     }
   ]
 
-  boot_disk_image_id = data.yandex_compute_image.ubuntu_2004.id
-  secondary_disk_ids = [element(yandex_compute_disk.secondary_disk[*].id, count.index)]
+  boot_disk_source_id = data.yandex_compute_image.ubuntu_2004.id
+  secondary_disk_ids  = [element(yandex_compute_disk.secondary_disk[*].id, count.index)]
 }
 
 ################################################################
@@ -92,7 +92,7 @@ module "instances_multiple_secondary_disks" {
     }
   ]
 
-  boot_disk_image_id = data.yandex_compute_image.ubuntu_2004.id
+  boot_disk_source_id = data.yandex_compute_image.ubuntu_2004.id
   secondary_disk_ids = [
     element(yandex_compute_disk.data_one[*].id, count.index),
     element(yandex_compute_disk.data_two[*].id, count.index),
