@@ -51,9 +51,11 @@ module "variables_ig" {
     short_zone_var_ru-central1-c = "rc1c"
   }
 
-  instance_name      = "production-{short_zone_var_{instance.zone_id}}-{instance.index}"
-  instance_hostname  = "production-{instance.index}"
-  boot_disk_image_id = data.yandex_compute_image.ubuntu_2004.id
+  instance_name     = "production-{short_zone_var_{instance.zone_id}}-{instance.index}"
+  instance_hostname = "production-{instance.index}"
+
+  boot_disk_source_id = data.yandex_compute_image.ubuntu_2004.id
+
   network_interfaces = [
     {
       network_id = yandex_vpc_network.compute_cloud.id
@@ -80,7 +82,8 @@ module "autoscaled_ig" {
   service_account_name = "autoscaled-ig-sa"
   zones                = local.zones
 
-  boot_disk_image_id = data.yandex_compute_image.ubuntu_2004.id
+  boot_disk_source_id = data.yandex_compute_image.ubuntu_2004.id
+
   network_interfaces = [
     {
       network_id = yandex_vpc_network.compute_cloud.id
