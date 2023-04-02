@@ -28,7 +28,7 @@ data "yandex_compute_image" "ubuntu_2004" {
 module "metadata" {
   source = "../../../modules/instance"
 
-  boot_disk_image_id = data.yandex_compute_image.ubuntu_2004.id
+  boot_disk_source_id = data.yandex_compute_image.ubuntu_2004.id
   network_interfaces = [
     {
       subnet_id = yandex_vpc_subnet.compute_cloud.id

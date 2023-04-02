@@ -1,3 +1,9 @@
+locals {
+  disk_id     = var.boot_disk_source_type == "disk" ? var.boot_disk_source_id : null
+  image_id    = var.boot_disk_source_type == "image" ? var.boot_disk_source_id : null
+  snapshot_id = var.boot_disk_source_type == "snapshot" ? var.boot_disk_source_id : null
+}
+
 resource "yandex_compute_instance" "this" {
   name               = var.name
   description        = var.description
@@ -7,7 +13,8 @@ resource "yandex_compute_instance" "this" {
   platform_id        = var.platform_id
   service_account_id = var.service_account_id
 
-  allow_stopping_for_update = true
+  allow_stopping_for_update = var.allow_stopping_for_update
+  network_acceleration_type = var.network_acceleration_type
 
   resources {
     cores         = var.cores
@@ -17,11 +24,17 @@ resource "yandex_compute_instance" "this" {
   }
 
   boot_disk {
+    auto_delete = var.boot_disk_auto_delete
+    device_name = var.boot_disk_device_name
+    mode        = var.boot_disk_mode
+    disk_id     = local.disk_id
     initialize_params {
+      name        = var.boot_disk_name
+      description = var.boot_disk_description
       size        = var.boot_disk_size
       type        = var.boot_disk_type
-      image_id    = var.boot_disk_image_id
-      snapshot_id = var.boot_disk_snapshot_id
+      image_id    = local.image_id
+      snapshot_id = local.snapshot_id
     }
   }
 
@@ -36,6 +49,36 @@ resource "yandex_compute_instance" "this" {
       nat                = try(network_interface.value.nat, null)
       nat_ip_address     = try(network_interface.value.nat_ip_address, null)
       security_group_ids = try(network_interface.value.security_group_ids, [])
+
+      dynamic "dns_record" {
+        for_each = try([network_interface.value.dns_record], [])
+        content {
+          fqdn        = dns_record.value.fqdn
+          dns_zone_id = try(dns_record.value.dns_zone_id, null)
+          ttl         = try(dns_record.value.ttl, null)
+          ptr         = try(dns_record.value.ptr, null)
+        }
+      }
+
+      dynamic "ipv6_dns_record" {
+        for_each = try([network_interface.value.ipv6_dns_record], [])
+        content {
+          fqdn        = ipv6_dns_record.value.fqdn
+          dns_zone_id = try(ipv6_dns_record.value.dns_zone_id, null)
+          ttl         = try(ipv6_dns_record.value.ttl, null)
+          ptr         = try(ipv6_dns_record.value.ptr, null)
+        }
+      }
+
+      dynamic "nat_dns_record" {
+        for_each = try([network_interface.value.nat_dns_record], [])
+        content {
+          fqdn        = nat_dns_record.value.fqdn
+          dns_zone_id = try(nat_dns_record.value.dns_zone_id, null)
+          ttl         = try(nat_dns_record.value.ttl, null)
+          ptr         = try(nat_dns_record.value.ptr, null)
+        }
+      }
     }
   }
 

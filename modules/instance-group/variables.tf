@@ -156,10 +156,39 @@ variable "memory" {
   default     = 2
 }
 
+variable "boot_disk_source_type" {
+  description = "Source type for the boot disk. The allowed values are `snapshot` or `image`."
+  type        = string
+  default     = "image"
+}
+
+variable "boot_disk_source_id" {
+  description = "Source id for the boot disk to initialize from."
+  type        = string
+}
+
+variable "boot_disk_device_name" {
+  description = "This value can be used to reference the device under `/dev/disk/by-id/`."
+  type        = string
+  default     = null
+}
+
+variable "boot_disk_mode" {
+  description = "Type of access to the disk resource."
+  type        = string
+  default     = null
+}
+
+variable "boot_disk_description" {
+  description = "A description of the boot disk."
+  type        = string
+  default     = null
+}
+
 variable "boot_disk_size" {
   description = "Size of the boot disk in GB."
   type        = number
-  default     = 10
+  default     = null
 }
 
 variable "boot_disk_type" {
@@ -168,21 +197,15 @@ variable "boot_disk_type" {
   default     = null
 }
 
-variable "boot_disk_image_id" {
-  description = "A disk image to initialize this disk from."
-  type        = string
-  default     = null
-}
-
-variable "boot_disk_snapshot_id" {
-  description = "A snapshot to initialize this disk from."
-  type        = string
-  default     = null
-}
-
 variable "network_interfaces" {
   description = "Networks to attach to the instance."
   type        = list(any)
+}
+
+variable "network_acceleration_type" {
+  description = "Type of network acceleration. The allowed values are `STANDARD`, `SOFTWARE_ACCELERATED`, `HARDWARE_ACCELERATED`."
+  type        = string
+  default     = "STANDARD"
 }
 
 variable "scheduling_policy_preemptible" {
