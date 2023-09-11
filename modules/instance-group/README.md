@@ -65,6 +65,7 @@ No modules.
 | <a name="input_network_acceleration_type"></a> [network\_acceleration\_type](#input\_network\_acceleration\_type) | Type of network acceleration. The allowed values are `STANDARD`, `SOFTWARE_ACCELERATED`, `HARDWARE_ACCELERATED`. | `string` | `"STANDARD"` | no |
 | <a name="input_scale_policy"></a> [scale\_policy](#input\_scale\_policy) | The scaling policy of the instance group. | `map(any)` | `{}` | no |
 | <a name="input_scheduling_policy_preemptible"></a> [scheduling\_policy\_preemptible](#input\_scheduling\_policy\_preemptible) | Specifies if the instance is preemptible. | `bool` | `false` | no |
+| <a name="input_secondary_disks"></a> [secondary\_disks](#input\_secondary\_disks) | A list of disks to attach to the instance. | `list(map(string))` | `[]` | no |
 | <a name="input_service_account_id"></a> [service\_account\_id](#input\_service\_account\_id) | ID of existing service account authorized for this instance group. | `string` | `null` | no |
 | <a name="input_service_account_name"></a> [service\_account\_name](#input\_service\_account\_name) | Name of the service account authorized for this instance group. | `string` | `null` | no |
 | <a name="input_user_data"></a> [user\_data](#input\_user\_data) | The user data to provide when launching the instance. | `string` | `null` | no |

@@ -197,6 +197,12 @@ variable "boot_disk_type" {
   default     = null
 }
 
+variable "secondary_disks" {
+  description = "A list of disks to attach to the instance."
+  type        = list(map(string))
+  default     = []
+}
+
 variable "network_interfaces" {
   description = "Networks to attach to the instance."
   type        = list(any)
