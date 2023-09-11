@@ -121,6 +121,22 @@ resource "yandex_compute_instance_group" "this" {
       preemptible = var.scheduling_policy_preemptible
     }
 
+    dynamic "secondary_disk" {
+      for_each = try(var.secondary_disks, [])
+      content {
+        disk_id     = try(secondary_disk.value.disk_id, null)
+        mode        = try(secondary_disk.value.mode, null)
+        device_name = try(secondary_disk.value.device_name, null)
+        initialize_params {
+          description = try(secondary_disk.value.description, null)
+          size        = try(secondary_disk.value.size, null)
+          type        = try(secondary_disk.value.type, null)
+          image_id    = try(secondary_disk.value.image_id, null)
+          snapshot_id = try(secondary_disk.value.snapshot_id, null)
+        }
+      }
+    }
+
     network_settings {
       type = var.network_acceleration_type
     }
