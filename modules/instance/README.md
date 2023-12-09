@@ -8,13 +8,13 @@ This module is used to create compute instance(s) using [compute_instance](https
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
-| <a name="requirement_yandex"></a> [yandex](#requirement\_yandex) | >= 0.71 |
+| <a name="requirement_yandex"></a> [yandex](#requirement\_yandex) | >= 0.103.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_yandex"></a> [yandex](#provider\_yandex) | >= 0.71 |
+| <a name="provider_yandex"></a> [yandex](#provider\_yandex) | >= 0.103.0 |
 
 ## Modules
 
@@ -34,6 +34,7 @@ No modules.
 | <a name="input_network_interfaces"></a> [network\_interfaces](#input\_network\_interfaces) | Networks to attach to the instance. | `list(any)` | n/a | yes |
 | <a name="input_allow_stopping_for_update"></a> [allow\_stopping\_for\_update](#input\_allow\_stopping\_for\_update) | If true, allows Terraform to stop the instance in order to update its properties. | `bool` | `true` | no |
 | <a name="input_boot_disk_auto_delete"></a> [boot\_disk\_auto\_delete](#input\_boot\_disk\_auto\_delete) | Defines whether the disk will be auto-deleted when the instance is deleted. | `bool` | `true` | no |
+| <a name="input_boot_disk_block_size"></a> [boot\_disk\_block\_size](#input\_boot\_disk\_block\_size) | Block size of the disk, specified in bytes. | `number` | `4096` | no |
 | <a name="input_boot_disk_description"></a> [boot\_disk\_description](#input\_boot\_disk\_description) | A description of the boot disk. | `string` | `null` | no |
 | <a name="input_boot_disk_device_name"></a> [boot\_disk\_device\_name](#input\_boot\_disk\_device\_name) | This value can be used to reference the device under `/dev/disk/by-id/`. | `string` | `null` | no |
 | <a name="input_boot_disk_mode"></a> [boot\_disk\_mode](#input\_boot\_disk\_mode) | Type of access to the disk resource. | `string` | `null` | no |
