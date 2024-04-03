@@ -32,6 +32,7 @@ resource "yandex_compute_instance" "this" {
       name        = var.boot_disk_name
       description = var.boot_disk_description
       size        = var.boot_disk_size
+      block_size  = var.boot_disk_block_size
       type        = var.boot_disk_type
       image_id    = local.image_id
       snapshot_id = local.snapshot_id

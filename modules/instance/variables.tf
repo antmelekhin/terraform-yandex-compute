@@ -117,6 +117,12 @@ variable "boot_disk_size" {
   default     = null
 }
 
+variable "boot_disk_block_size" {
+  description = "Block size of the disk, specified in bytes."
+  type        = number
+  default     = 4096
+}
+
 variable "boot_disk_type" {
   description = "The boot disk type. The allowed values are `network-hdd`, `network-ssd`, `network-ssd-nonreplicated`."
   type        = string
