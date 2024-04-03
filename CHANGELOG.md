@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.0.0](https://github.com/antmelekhin/terraform-yandex-compute/compare/v0.5.0...v1.0.0) (2024-04-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* update provider version (#5)
+
+### Continuous Integration
+
+* update release rules ([07a905d](https://github.com/antmelekhin/terraform-yandex-compute/commit/07a905d17d6c56a3cd8ad942f6b022ccacdcbc63))
+
+
+### Features
+
+* update provider version ([#5](https://github.com/antmelekhin/terraform-yandex-compute/issues/5)) ([cab0e4b](https://github.com/antmelekhin/terraform-yandex-compute/commit/cab0e4b74acbd62653b36af8701a0fa3d3b1a6f0))
+
 ## [0.5.0](https://github.com/antmelekhin/terraform-yandex-compute/compare/v0.4.0...v0.5.0) (2023-09-11)
 
 
