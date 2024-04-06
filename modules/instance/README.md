@@ -49,6 +49,8 @@ No modules.
 | <a name="input_gpus"></a> [gpus](#input\_gpus) | GPUs for the instance. | `number` | `null` | no |
 | <a name="input_hostname"></a> [hostname](#input\_hostname) | Hostname for the instance. | `string` | `null` | no |
 | <a name="input_labels"></a> [labels](#input\_labels) | A set of key/value label pairs to assign to the instance. | `map(string)` | `{}` | no |
+| <a name="input_maintenance_grace_period"></a> [maintenance\_grace\_period](#input\_maintenance\_grace\_period) | Time between notification via metadata service and maintenance. E.g., 60s. | `string` | `null` | no |
+| <a name="input_maintenance_policy"></a> [maintenance\_policy](#input\_maintenance\_policy) | Behaviour on maintenance events. Values: `unspecified`, `migrate`, `restart`. | `string` | `null` | no |
 | <a name="input_memory"></a> [memory](#input\_memory) | Memory size in GB. | `number` | `2` | no |
 | <a name="input_metadata"></a> [metadata](#input\_metadata) | The metadata to provide when launching the instance. | `map(string)` | `{}` | no |
 | <a name="input_metadata_options"></a> [metadata\_options](#input\_metadata\_options) | Options allow user to configure access to instance's metadata. | `map(string)` | `{}` | no |
