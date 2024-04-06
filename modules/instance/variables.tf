@@ -170,6 +170,12 @@ variable "user_data" {
   default     = null
 }
 
+variable "metadata_options" {
+  description = "Options allow user to configure access to instance's metadata."
+  type        = map(string)
+  default     = {}
+}
+
 variable "labels" {
   description = "A set of key/value label pairs to assign to the instance."
   type        = map(string)
