@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/antmelekhin/terraform-yandex-compute/compare/v1.0.0...v1.1.0) (2024-04-06)
+
+
+### Features
+
+* add `metadata_options` argument ([#6](https://github.com/antmelekhin/terraform-yandex-compute/issues/6)) ([035def0](https://github.com/antmelekhin/terraform-yandex-compute/commit/035def01c974277a8bf9fbc26c81690e564ca834))
+
 ## [1.0.0](https://github.com/antmelekhin/terraform-yandex-compute/compare/v0.5.0...v1.0.0) (2024-04-03)
 
 
