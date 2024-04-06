@@ -110,5 +110,8 @@ resource "yandex_compute_instance" "this" {
     }
   }
 
+  maintenance_policy       = var.maintenance_policy
+  maintenance_grace_period = var.maintenance_grace_period
+
   labels = var.labels
 }

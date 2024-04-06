@@ -176,6 +176,18 @@ variable "metadata_options" {
   default     = {}
 }
 
+variable "maintenance_policy" {
+  description = "Behaviour on maintenance events. Values: `unspecified`, `migrate`, `restart`."
+  type        = string
+  default     = null
+}
+
+variable "maintenance_grace_period" {
+  description = "Time between notification via metadata service and maintenance. E.g., 60s."
+  type        = string
+  default     = null
+}
+
 variable "labels" {
   description = "A set of key/value label pairs to assign to the instance."
   type        = map(string)
