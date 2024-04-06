@@ -8,13 +8,13 @@ This module is used to create compute instance(s) using [compute_instance](https
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
-| <a name="requirement_yandex"></a> [yandex](#requirement\_yandex) | >= 0.103.0 |
+| <a name="requirement_yandex"></a> [yandex](#requirement\_yandex) | >= 0.114.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_yandex"></a> [yandex](#provider\_yandex) | >= 0.103.0 |
+| <a name="provider_yandex"></a> [yandex](#provider\_yandex) | >= 0.114.0 |
 
 ## Modules
 
