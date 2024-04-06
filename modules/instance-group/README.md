@@ -61,6 +61,7 @@ No modules.
 | <a name="input_max_checking_health_duration"></a> [max\_checking\_health\_duration](#input\_max\_checking\_health\_duration) | Timeout for waiting for the VM to become healthy. | `number` | `null` | no |
 | <a name="input_memory"></a> [memory](#input\_memory) | Memory size in GB. | `number` | `2` | no |
 | <a name="input_metadata"></a> [metadata](#input\_metadata) | The metadata to provide when launching the instance. | `map(string)` | `{}` | no |
+| <a name="input_metadata_options"></a> [metadata\_options](#input\_metadata\_options) | Options allow user to configure access to instance's metadata. | `map(string)` | `{}` | no |
 | <a name="input_name"></a> [name](#input\_name) | The name of the instance group. | `string` | `null` | no |
 | <a name="input_network_acceleration_type"></a> [network\_acceleration\_type](#input\_network\_acceleration\_type) | Type of network acceleration. The allowed values are `STANDARD`, `SOFTWARE_ACCELERATED`, `HARDWARE_ACCELERATED`. | `string` | `"STANDARD"` | no |
 | <a name="input_scale_policy"></a> [scale\_policy](#input\_scale\_policy) | The scaling policy of the instance group. | `map(any)` | `{}` | no |

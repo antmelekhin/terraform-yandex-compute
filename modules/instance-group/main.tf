@@ -146,6 +146,16 @@ resource "yandex_compute_instance_group" "this" {
       tomap({ user-data = var.user_data })
     )
 
+    dynamic "metadata_options" {
+      for_each = length(var.metadata_options) > 0 ? [var.metadata_options] : []
+      content {
+        aws_v1_http_endpoint = try(metadata_options.value.aws_v1_http_endpoint, 1)
+        aws_v1_http_token    = try(metadata_options.value.aws_v1_http_token, 2)
+        gce_http_endpoint    = try(metadata_options.value.gce_http_endpoint, 1)
+        gce_http_token       = try(metadata_options.value.gce_http_token, 1)
+      }
+    }
+
     labels = merge(var.labels, var.instance_labels)
   }
 

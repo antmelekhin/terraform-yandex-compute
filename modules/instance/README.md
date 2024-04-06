@@ -51,6 +51,7 @@ No modules.
 | <a name="input_labels"></a> [labels](#input\_labels) | A set of key/value label pairs to assign to the instance. | `map(string)` | `{}` | no |
 | <a name="input_memory"></a> [memory](#input\_memory) | Memory size in GB. | `number` | `2` | no |
 | <a name="input_metadata"></a> [metadata](#input\_metadata) | The metadata to provide when launching the instance. | `map(string)` | `{}` | no |
+| <a name="input_metadata_options"></a> [metadata\_options](#input\_metadata\_options) | Options allow user to configure access to instance's metadata. | `map(string)` | `{}` | no |
 | <a name="input_name"></a> [name](#input\_name) | The name of the instance. | `string` | `null` | no |
 | <a name="input_network_acceleration_type"></a> [network\_acceleration\_type](#input\_network\_acceleration\_type) | Type of network acceleration. The allowed values are `standard`, `software_accelerated`. | `string` | `"standard"` | no |
 | <a name="input_platform_id"></a> [platform\_id](#input\_platform\_id) | The type of instance to create. See official documentation https://cloud.yandex.com/en/docs/compute/concepts/vm-platforms | `string` | `"standard-v3"` | no |
