@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/antmelekhin/terraform-yandex-compute/compare/v1.1.0...v1.2.0) (2024-04-06)
+
+
+### Features
+
+* add `maintenance_policy` and `maintenance_grace_period` variables ([#7](https://github.com/antmelekhin/terraform-yandex-compute/issues/7)) ([0de2836](https://github.com/antmelekhin/terraform-yandex-compute/commit/0de2836b2183995f9aa38a3f50adc2dd3c66ef69))
+
 ## [1.1.0](https://github.com/antmelekhin/terraform-yandex-compute/compare/v1.0.0...v1.1.0) (2024-04-06)
 
 
