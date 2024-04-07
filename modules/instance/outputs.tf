@@ -3,6 +3,11 @@ output "fqdn" {
   value       = yandex_compute_instance.this[*].fqdn
 }
 
+output "boot_disk_id" {
+  description = "ID of the disk that is attached to the instance."
+  value       = yandex_compute_instance.this.boot_disk[0].disk_id
+}
+
 output "ip_address" {
   description = "The internal IP address of the instance."
   value       = yandex_compute_instance.this[*].network_interface[0].ip_address
