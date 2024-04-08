@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/antmelekhin/terraform-yandex-compute/compare/v1.2.0...v1.3.0) (2024-04-08)
+
+
+### Features
+
+* add `snapshot` module ([#8](https://github.com/antmelekhin/terraform-yandex-compute/issues/8)) ([32f2f0d](https://github.com/antmelekhin/terraform-yandex-compute/commit/32f2f0de9d8dc210112e8e26b5772a718b2c0ecc))
+
 ## [1.2.0](https://github.com/antmelekhin/terraform-yandex-compute/compare/v1.1.0...v1.2.0) (2024-04-06)
 
 
