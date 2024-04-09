@@ -72,5 +72,6 @@ No modules.
 | <a name="output_boot_disk_name"></a> [boot\_disk\_name](#output\_boot\_disk\_name) | Name of the disk that is attached to the instance. |
 | <a name="output_fqdn"></a> [fqdn](#output\_fqdn) | The fully qualified DNS name of this instance. |
 | <a name="output_ip_address"></a> [ip\_address](#output\_ip\_address) | The internal IP address of the instance. |
+| <a name="output_name"></a> [name](#output\_name) | The name of the instance. |
 | <a name="output_nat_ip_address"></a> [nat\_ip\_address](#output\_nat\_ip\_address) | The external IP address of the instance. |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
