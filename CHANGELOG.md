@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/antmelekhin/terraform-yandex-compute/compare/v1.3.0...v1.3.1) (2024-04-09)
+
+
+### Fixes
+
+* add `name` output and fix old output values for `instance` module ([#9](https://github.com/antmelekhin/terraform-yandex-compute/issues/9)) ([f471e89](https://github.com/antmelekhin/terraform-yandex-compute/commit/f471e895191a9960db3377640128965053079ec3))
+
 ## [1.3.0](https://github.com/antmelekhin/terraform-yandex-compute/compare/v1.2.0...v1.3.0) (2024-04-08)
 
 
